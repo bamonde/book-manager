@@ -14,6 +14,7 @@ gem "jbuilder" # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "bootsnap", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "devise" # Authentication and Authorization
+gem "awesome_print"
 # gem "sassc-rails" # Use Sass to process CSS
 # gem 'bootstrap', '~> 5.2', '>= 5.2.1'
 
@@ -38,4 +39,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "shoulda-matchers", "~> 5.0"
+  gem "rails-controller-testing"
+  gem "rspec-collection_matchers"
 end

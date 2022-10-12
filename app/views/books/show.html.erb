@@ -1,0 +1,30 @@
+<div id="books">
+  <table>
+    <thead>
+      <tr>
+        <td>Título</td>
+        <td>Gênero</td>
+        <td>Autor(es)</td>
+        <td>Lançamento</td>
+        <td>Edição</td>
+        <td>Editora</td>
+        <td>ISBN</td>
+        <td>ICCN</td>
+        <td>OCLC</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @book.title %></td>
+        <td><%= @book.genre %></td>
+        <td><%= @book.authors.map(&:name).join(', ') %></td>
+        <td><%= l @book.release_date %></td>
+        <td><%= @book.edition %></td>
+        <td><%= @book.publisher.name %></td>
+        <td><%= @book.isbn %></td>
+        <td><%= @book.iccn %></td>
+        <td><%= @book.oclc %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

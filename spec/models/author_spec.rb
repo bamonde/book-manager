@@ -19,6 +19,6 @@ RSpec.describe Author, :unit, type: :model do
   end
 
   context 'associations' do
-    it { is_expected.to have_and_belong_to_many(:books) }
+    it { is_expected.to have_and_belong_to_many(:books).dependent(:destroy) }
   end
 end

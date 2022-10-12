@@ -23,7 +23,7 @@ RSpec.describe Book, :unit, type: :model do
 
   context 'associations' do
     it { is_expected.to belong_to(:publisher) }
-    it { is_expected.to have_and_belong_to_many(:authors) }
+    it { is_expected.to have_and_belong_to_many(:authors).dependent(:destroy) }
     it { is_expected.to have_one(:cover_attachment) }
   end
 end
