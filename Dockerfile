@@ -1,8 +1,5 @@
 FROM ruby:3.1.2
 
-# throw errors if Gemfile has been modified since Gemfile.lock
-# RUN bundle config --global frozen 1
-
 RUN apt-get update
 RUN apt-get -y install postgresql
 
@@ -14,7 +11,7 @@ ENV BUNDLE_PATH=/bundle \
 
 WORKDIR /web
 
-# COPY Gemfile Gemfile.lock ./
+# COPY Gemfile Gemfile.lock ./web
 # RUN bundle install
 
 ADD . ./web
