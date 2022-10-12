@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :publisher do
-    name { [Faker::Company.name, Faker::Company.suffix].join(' ') }
+    name { Faker::Book.publisher }
   end
 end
