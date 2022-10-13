@@ -9,7 +9,7 @@ e assim que logado a pagina que devo ser encaminhado é uma pagina de listagem d
 ## Install
 ```
 docker-compose build
-docker-compose run --rm web bin/rails db:setup
+docker-compose run --rm web bundle exec rails db:setup
 ```
 
 ## Development environment
@@ -19,7 +19,7 @@ docker-compose up web
 
 ## Test environment
 ```
-docker-compose run --rm web rspec
+docker-compose run --rm web bundle exec rspec
 ```
 
 *Oct, 2022 - Herbertt Bamonde*
