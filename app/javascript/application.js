@@ -8,6 +8,9 @@ import 'bootstrap'
 import * as bootstrap from 'bootstrap'
 window.bootstrap = bootstrap
 
+import "@hotwired/turbo-rails"
+import "controllers"
+
 $(document).ready(function () {
-  console.log('Sytem Ready');
+  console.log('System Ready');
 });

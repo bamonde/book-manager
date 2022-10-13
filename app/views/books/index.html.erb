@@ -38,7 +38,7 @@
               <%= link_to edit_book_path(book) do %>
                 <span class="material-symbols-outlined">edit_square</span>
               <% end %>
-              <%= link_to book_path(book), method: :delete, data: { turbo_method: "delete", confirm: 'Are you sure?' } do %>
+              <%= link_to book_path(book), data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' } do %>
                 <span class="material-symbols-outlined">delete</span>
               <% end %>
             </td>

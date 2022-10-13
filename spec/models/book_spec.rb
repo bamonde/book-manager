@@ -26,4 +26,16 @@ RSpec.describe Book, :unit, type: :model do
     it { is_expected.to have_and_belong_to_many(:authors).dependent(:destroy) }
     it { is_expected.to have_one(:cover_attachment) }
   end
+
+  context 'behaviors' do
+    context '#authors_name' do
+      let!(:author_tony) { FactoryBot.create(:author, name: 'Tony Stark') }
+      let!(:author_steve) { FactoryBot.create(:author, name: 'Steve Rogers') }
+      let!(:book) { FactoryBot.create(:book, authors: [author_tony, author_steve]) }
+
+      subject { book.authors_name }
+
+      it { is_expected.to match_array(['Tony Stark', 'Steve Rogers']) }
+    end
+  end
 end

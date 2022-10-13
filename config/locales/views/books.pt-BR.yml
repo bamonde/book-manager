@@ -1,0 +1,10 @@
+pt-BR:
+  books:
+    show:
+      title: "Título"
+      genre: "Gênero"
+      release_date: "Data de Lançamento"
+      authors: "Autor(es)"
+      publisher: "Editora"
+      edition: "Edição"
+      informations: "Informações"
