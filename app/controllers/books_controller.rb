@@ -13,13 +13,9 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
-    if (@book.save)
-      flash[:success] = 'Livro criado com sucesso!'
-      redirect_to books_path
-    else
-      flash[:error] = 'Erros encontrados nos campos!'
-      render :new
-    end
+    return respond_with @book, location: books_path if (@book.save)
+
+    respond_with @book
   end
 
   def show
@@ -29,25 +25,15 @@ class BooksController < ApplicationController
   end
 
   def update
-    if (@book.update(book_params))
-      # flash.keep
-      # flash[:notice] = t('.notice')
-      respond_with @book, location: books_path
-      # respond_with @book, flash_now: false, location: books_path
-      # respond_with(@book, :flash_now => false) do |format|
-      #   format.html { redirect_to books_path }
-      # end
-      # redirect_to books_path, notice: t('.notice', scope: 'flash')
-    else
-      flash[:error] = t('.error', scope: 'flash')
-      render :new
-    end
+    return respond_with @book, location: books_path if (@book.update(book_params))
+
+    respond_with @book
   end
 
   def destroy
     @book.destroy
 
-    flash[:success] = 'Livro excluído!'
+    flash[:success] = t('.success', scope: 'flash')
 
     redirect_to books_path
   end
@@ -66,7 +52,7 @@ class BooksController < ApplicationController
   def load_book
     @book = Book.find(params[:id])
   rescue
-    flash[:error] = 'Livro não encontrado!'
+    flash[:error] = t('not_found', scope: 'flash')
     redirect_to books_path
   end
 end
