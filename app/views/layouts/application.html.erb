@@ -6,10 +6,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= render partial: 'header' %>
+          <%= render partial: 'flash_message', locals: { flash: flash } %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

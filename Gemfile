@@ -15,8 +15,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ] # Windows does n
 gem "bootsnap", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "devise" # Authentication and Authorization
 gem "awesome_print"
-# gem "sassc-rails" # Use Sass to process CSS
-# gem 'bootstrap', '~> 5.2', '>= 5.2.1'
+gem 'bootstrap', '~> 5.2', '>= 5.2.1'
+gem "sassc-rails" # Use Sass to process CSS
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

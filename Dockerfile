@@ -2,6 +2,7 @@ FROM ruby:3.1.2
 
 RUN apt-get update
 RUN apt-get -y install postgresql
+RUN apt-get -y install nodejs
 
 ENV BUNDLE_PATH=/bundle \
     BUNDLE_BIN=/bundle/bin \

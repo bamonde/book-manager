@@ -3,7 +3,8 @@ class BooksController < ApplicationController
   before_action :load_book, only: %i[show edit update destroy]
 
   def index
-    @books = Book.all
+    flash[:success] = 'Sucesso'
+    @books = Book.includes(:publisher, :authors).all
   end
 
   def new

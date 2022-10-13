@@ -1,19 +1,25 @@
 <div id="books">
+  <div class="row my-2">
+    <div class="col text-right">
+      <%= link_to 'Novo Livro', new_book_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
   <% if @books.empty? %>
     <div>Nenhum livro cadastrado</div>
   <% else %>
-    <table>
+    <table class="table table-responsive">
       <thead>
         <tr>
-          <td>Título</td>
-          <td>Gênero</td>
-          <td>Autor(es)</td>
-          <td>Lançamento</td>
-          <td>Edição</td>
-          <td>Editora</td>
-          <td>ISBN</td>
-          <td>ICCN</td>
-          <td>OCLC</td>
+          <th>Título</th>
+          <th>Gênero</th>
+          <th>Autor(es)</th>
+          <th>Lançamento</th>
+          <th>Edição</th>
+          <th>Editora</th>
+          <th>ISBN</th>
+          <th>ICCN</th>
+          <th>OCLC</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +34,14 @@
             <td><%= book.isbn %></td>
             <td><%= book.iccn %></td>
             <td><%= book.oclc %></td>
+            <td>
+              <%= link_to edit_book_path(book) do %>
+                <span class="material-symbols-outlined">edit_square</span>
+              <% end %>
+              <%= link_to book_path(book), method: :delete, data: { turbo_method: "delete", confirm: 'Are you sure?' } do %>
+                <span class="material-symbols-outlined">delete</span>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

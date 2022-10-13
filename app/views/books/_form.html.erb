@@ -1,2 +1,88 @@
-<div class="form">
-</div>
+<%= form_with model: @book do |f| %>
+  <div class="form">
+    <div class="row">
+      <div class="col-10">
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control" %>
+          <%= error_for(f, :title) %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.label :genre %>
+              <%= f.text_field :genre, class: "form-control" %>
+              <%= error_for(f, :genre) %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.label :release_date %>
+              <%= f.text_field :release_date, class: "form-control" %>
+              <%= error_for(f, :release_date) %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.label :edition %>
+              <%= f.text_field :edition, class: "form-control" %>
+              <%= error_for(f, :edition) %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.label :isbn %>
+              <%= f.text_field :isbn, class: "form-control" %>
+              <%= error_for(f, :isbn) %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.label :oclc %>
+              <%= f.text_field :oclc, class: "form-control" %>
+              <%= error_for(f, :oclc) %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.label :iccn %>
+              <%= f.text_field :iccn, class: "form-control" %>
+              <%= error_for(f, :iccn) %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <%= f.label :publisher_id %>
+              <%= f.collection_select(:publisher_id, Publisher.all, :id, :name, { prompt: '' }, { class: "form-control custom-select" }) %>
+              <%= error_for(f, :publisher_id) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="form-group">
+          <%= f.label :author_ids %>
+          <%= f.collection_select(:author_ids, Author.all, :id, :name, {}, { class: "form-control custom-select", multiple: true, size: 10 }) %>
+          <%= error_for(f, :author_ids) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+        <%= f.submit 'Salvar', class: 'btn btn-success' %>
+        <%= link_to 'Cancelar', books_path, class: 'btn btn-light' %>
+      </div>
+    </div>
+  </div>
+<% end %>
