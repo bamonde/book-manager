@@ -8,7 +8,7 @@ publishers = Publisher.all
 authors = Author.all
 
 (1..100).each do
-  Book.create(
+  book = Book.create(
     title: Faker::Book.title,
     genre: Faker::Book.genre,
     edition: (1..4).to_a.sample,
@@ -17,6 +17,9 @@ authors = Author.all
     iccn: Faker::Number.number(digits: 4),
     oclc: Faker::Number.number(digits: 8),
     publisher: publishers.sample,
-    authors: [authors.sample, authors.sample]
+    authors: [authors.sample, authors.sample],
   )
+
+  filename = "book-#{(1..5).to_a.sample}.jpg"
+  book.cover.attach(io: File.open(Rails.root.join('db', 'support',  filename)), filename: filename)
 end
