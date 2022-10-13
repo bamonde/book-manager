@@ -289,6 +289,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 7.0.4)
   rails-controller-testing
+  responders
   rspec-collection_matchers
   rspec-rails
   sassc-rails

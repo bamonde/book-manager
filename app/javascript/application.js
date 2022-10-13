@@ -9,9 +9,5 @@ import * as bootstrap from 'bootstrap'
 window.bootstrap = bootstrap
 
 $(document).ready(function () {
-  console.log('ready');
-  $("body").on('.alert .close', 'click', (event) => {
-    console.log(event);
-    $('.alert').alert("close");
-  })
+  console.log('Sytem Ready');
 });

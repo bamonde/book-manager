@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    models:
+      book:
+        one: "Livro"
+        other: "Livros"
+    attributes:
+      book:
+        title: "Título"
+        release_date: "Data de Lançamento"
+        edition: "Edição"
+        genre: "Gênero"
+        isbn: "ISBN"
+        iccn: "ICCN"
+        oclc: "OCLC"
+        publisher: "Editora"
+        author: "Autor"

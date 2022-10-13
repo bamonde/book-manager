@@ -1,0 +1,12 @@
+pt-BR:
+  flash:
+    actions:
+      create:
+        success: "%{resource_name} foi criado com sucesso."
+        error: 'Não foi possível efetuar o cadastro. Por favor, confira os campos abaixo.'
+      update:
+        success: "%{resource_name} foi editado com sucesso."
+        error: 'Não foi possível editar. Por favor, confira os campos abaixo.'
+      destroy:
+        success: "%{resource_name} foi removido com sucesso."
+        error: 'Não foi possível remover. Por favor, tente novamente.'

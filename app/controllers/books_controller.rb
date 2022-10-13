@@ -3,7 +3,6 @@ class BooksController < ApplicationController
   before_action :load_book, only: %i[show edit update destroy]
 
   def index
-    flash[:success] = 'Sucesso'
     @books = Book.includes(:publisher, :authors).all
   end
 
@@ -31,10 +30,16 @@ class BooksController < ApplicationController
 
   def update
     if (@book.update(book_params))
-      flash[:success] = 'Dados do livro atualizado com sucesso!'
-      redirect_to books_path
+      # flash.keep
+      # flash[:notice] = t('.notice')
+      respond_with @book, location: books_path
+      # respond_with @book, flash_now: false, location: books_path
+      # respond_with(@book, :flash_now => false) do |format|
+      #   format.html { redirect_to books_path }
+      # end
+      # redirect_to books_path, notice: t('.notice', scope: 'flash')
     else
-      flash[:error] = 'Erros encontrados nos campos!'
+      flash[:error] = t('.error', scope: 'flash')
       render :new
     end
   end

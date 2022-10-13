@@ -8,8 +8,17 @@ Bundler.require(*Rails.groups)
 
 module App
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+    config.responders.flash_keys = [ :success, :error ]
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.time_zone = 'Brasilia'
+    config.i18n.locale = :'pt-BR'
+    config.i18n.default_locale = :'pt-BR'
 
     # Configuration for the application, engines, and railties goes here.
     #
