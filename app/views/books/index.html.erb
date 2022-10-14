@@ -1,4 +1,4 @@
-<div class="books">
+<div class="books list">
   <% if @books.empty? %>
     <div class="row">
       <div class="col">
@@ -20,11 +20,11 @@
               <div class="card-body">
                 <h5 class="card-title text-truncate" title="<%= book.title %>"><%= book.title %></h5>
                 <p class="card-text text-truncate" title="<%= book.genre %>"><%= book.genre %></p>
-                <div class="text-right">
-                  <%= link_to edit_book_path(book) do %>
+                <div class="text-center">
+                  <%= link_to edit_book_path(book), class: 'btn btn-sm btn-light' do %>
                     <span class="material-symbols-outlined">edit_square</span>
                   <% end %>
-                  <%= link_to book_path(book), data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' } do %>
+                  <%= link_to book_path(book), class: 'btn btn-sm btn-light list-delete', data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' } do %>
                     <span class="material-symbols-outlined">delete</span>
                   <% end %>
                 </div>

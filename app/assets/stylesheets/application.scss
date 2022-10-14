@@ -29,8 +29,17 @@ form {
     font-size: 12px;
     color: red;
   }
+
 }
 
+.list {
+  .list-delete {
+    span {
+      position: relative;
+      top: 3px;
+    }
+  }
+}
 .custom-carousel {
   ul {
     overflow: hidden;
