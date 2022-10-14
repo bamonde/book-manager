@@ -1,4 +1,9 @@
 <div class="books list">
+  <div class="row my-2">
+    <div class="col text-right">
+      <%= link_to 'Novo Livro', new_book_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
   <% if @books.empty? %>
     <div class="row">
       <div class="col">
@@ -21,6 +26,9 @@
                 <h5 class="card-title text-truncate" title="<%= book.title %>"><%= book.title %></h5>
                 <p class="card-text text-truncate" title="<%= book.genre %>"><%= book.genre %></p>
                 <div class="text-center">
+                  <%= link_to book_path(book), class: 'btn btn-sm btn-light list-show' do %>
+                    <span class="material-symbols-outlined">open_in_new</span>
+                  <% end %>
                   <%= link_to edit_book_path(book), class: 'btn btn-sm btn-light' do %>
                     <span class="material-symbols-outlined">edit_square</span>
                   <% end %>
