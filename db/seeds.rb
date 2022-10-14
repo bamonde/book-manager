@@ -21,5 +21,5 @@ authors = Author.all
   )
 
   filename = "book-#{(1..5).to_a.sample}.jpg"
-  book.cover.attach(io: File.open(Rails.root.join('db', 'support',  filename)), filename: filename)
+  book.cover.attach(io: File.open(Rails.root.join('db', 'support', filename)), filename: filename)
 end

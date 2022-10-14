@@ -2,7 +2,7 @@
   <div class="form">
     <div class="row">
       <div class="col-10">
-        <div class="form-group">
+        <div class="form-group mt-2">
           <%= f.label :title %>
           <%= f.text_field :title, class: "form-control" %>
           <%= error_for(f, :title) %>
@@ -13,14 +13,14 @@
       <div class="col-5">
         <div class="row">
           <div class="col-6">
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :genre %>
               <%= f.text_field :genre, class: "form-control" %>
               <%= error_for(f, :genre) %>
             </div>
           </div>
           <div class="col-6">
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :release_date %>
               <%= f.text_field :release_date, class: "form-control" %>
               <%= error_for(f, :release_date) %>
@@ -29,14 +29,14 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :edition %>
               <%= f.text_field :edition, class: "form-control" %>
               <%= error_for(f, :edition) %>
             </div>
           </div>
           <div class="col-6">
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :isbn %>
               <%= f.text_field :isbn, class: "form-control" %>
               <%= error_for(f, :isbn) %>
@@ -45,14 +45,14 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :oclc %>
               <%= f.text_field :oclc, class: "form-control" %>
               <%= error_for(f, :oclc) %>
             </div>
           </div>
           <div class="col-6">
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :iccn %>
               <%= f.text_field :iccn, class: "form-control" %>
               <%= error_for(f, :iccn) %>
@@ -60,20 +60,37 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
-            <div class="form-group">
+          <div class="col">
+            <div class="form-group mt-2">
+              <%= f.label :cover %>
+              <%= f.file_field :cover, class: "form-control" %>
+              <%= error_for(f, :cover) %>
+            </div>
+            <div class="form-group form-check mt-2">
+              <%= f.check_box :remove_cover, class: "form-check-input" %>
+              <%= f.label :remove_cover %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="row">
+          <div class="col">
+            <div class="form-group mt-2">
               <%= f.label :publisher_id %>
               <%= f.collection_select(:publisher_id, Publisher.all, :id, :name, { prompt: '' }, { class: "form-control custom-select" }) %>
               <%= error_for(f, :publisher_id) %>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-5">
-        <div class="form-group">
-          <%= f.label :author_ids %>
-          <%= f.collection_select(:author_ids, Author.all, :id, :name, {}, { class: "form-control custom-select", multiple: true, size: 10 }) %>
-          <%= error_for(f, :author_ids) %>
+        <div class="row">
+          <div class="col">
+            <div class="form-group mt-2">
+              <%= f.label :author_ids %>
+              <%= f.collection_select(:author_ids, Author.all, :id, :name, {}, { class: "form-control custom-select", multiple: true, size: 8 }) %>
+              <%= error_for(f, :author_ids) %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

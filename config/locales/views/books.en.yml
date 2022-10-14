@@ -1,0 +1,10 @@
+pt-BR:
+  books:
+    show:
+      title: "Title"
+      genre: "Genre"
+      release_date: "Release Date"
+      authors: "Author(s)"
+      publisher: "Publisher"
+      edition: "Edition"
+      informations: "Informations"

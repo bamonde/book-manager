@@ -8,5 +8,13 @@ FactoryBot.define do
     iccn { Faker::Number.number(digits: 4) }
     oclc { Faker::Number.number(digits: 8) }
     publisher { FactoryBot.create(:publisher) }
+
+    after(:build) do |book|
+      book.cover.attach(
+        io: File.open(Rails.root.join('spec', 'support', 'files', 'book-cover.jpg')),
+        filename: 'book-cover.jpg',
+        content_type: 'image/jpeg'
+      )
+    end
   end
 end

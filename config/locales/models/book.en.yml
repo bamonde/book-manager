@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      book:
+        one: "Book"
+        other: "Books"
+    attributes:
+      book:
+        title: "Title"
+        release_date: "Release Date"
+        edition: "Edition"
+        genre: "genre"
+        isbn: "ISBN"
+        iccn: "ICCN"
+        oclc: "OCLC"
+        publisher: "Publisher"
+        author: "Author"
+        cover: "Cover"
+        remove_cover: "Remove cover"

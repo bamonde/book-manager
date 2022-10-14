@@ -37,5 +37,48 @@ RSpec.describe Book, :unit, type: :model do
 
       it { is_expected.to match_array(['Tony Stark', 'Steve Rogers']) }
     end
+
+    context '#remove_cover' do
+      context 'set' do
+        let!(:book) { FactoryBot.create(:book) }
+
+        subject { book.remove_cover }
+
+        context 'default value when nil' do
+          it { is_expected.to be_falsy }
+        end
+
+        context 'false' do
+          before { book.remove_cover = false }
+
+          it { is_expected.to be_falsy }
+        end
+
+        context 'true' do
+          before { book.remove_cover = true }
+
+          it { is_expected.to be_truthy }
+        end
+      end
+    end
+
+    context 'after_commit' do
+      context '#remove_cover' do
+        let!(:book) { FactoryBot.create(:book) }
+
+        before { book.remove_cover = true }
+
+        it { expect { book.save }.to change { book.cover.filename.to_s }.from('book-cover.jpg').to('book-default.png') }
+      end
+
+      context '#add_default_cover' do
+        let(:book) { FactoryBot.build(:book) }
+
+        before { book.cover = nil }
+
+        it { expect(book.cover_attachment).to be_nil }
+        it { expect { book.save }.to change { book.cover.filename.to_s }.from("").to('book-default.png') }
+      end
+    end
   end
 end
