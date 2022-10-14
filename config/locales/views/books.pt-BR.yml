@@ -8,3 +8,6 @@ pt-BR:
       publisher: "Editora"
       edition: "Edição"
       informations: "Informações"
+    index:
+      blank_slate: "Nanhum livro cadastrado!"
+      new_book: "Quero cadastrar agora"

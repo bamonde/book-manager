@@ -1,46 +1,42 @@
-<div id="books">
-  <div class="row my-2">
-    <div class="col text-right">
-      <%= link_to 'Novo Livro', new_book_path, class: 'btn btn-primary' %>
-    </div>
-  </div>
+<div class="books">
   <% if @books.empty? %>
-    <div>Nenhum livro cadastrado</div>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <%= t('.blank_slate') %>
+            <%= link_to t('.new_book'), new_book_path, class: 'btn-btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% else %>
-    <table class="table table-responsive">
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Edição</th>
-          <th>Gênero</th>
-          <th>Autor(es)</th>
-          <th>Lançamento</th>
-          <th>Editora</th>
-          <th>ISBN</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class="custom-carousel">
+      <ul>
         <% @books.each do |book| %>
-          <tr>
-            <td><%= link_to book.title, book_path(book) %></td>
-            <td><%= book.edition %></td>
-            <td><%= book.genre %></td>
-            <td><%= book.authors.first.name %><%= book.authors.size > 1 ? " (+#{book.authors.size-1})" : '' %></td>
-            <td><%= l(book.release_date, format: :only_date) %></td>
-            <td><%= book.publisher.name %></td>
-            <td><%= book.isbn %></td>
-            <td>
-              <%= link_to edit_book_path(book) do %>
-                <span class="material-symbols-outlined">edit_square</span>
-              <% end %>
-              <%= link_to book_path(book), data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' } do %>
-                <span class="material-symbols-outlined">delete</span>
-              <% end %>
-            </td>
-          </tr>
+          <li class="custom-carousel-item">
+            <div class="card">
+              <%= image_tag book.cover_attachment, class: 'card-img-top' %>
+              <div class="card-body">
+                <h5 class="card-title text-truncate" title="<%= book.title %>"><%= book.title %></h5>
+                <p class="card-text text-truncate" title="<%= book.genre %>"><%= book.genre %></p>
+                <div class="text-right">
+                  <%= link_to edit_book_path(book) do %>
+                    <span class="material-symbols-outlined">edit_square</span>
+                  <% end %>
+                  <%= link_to book_path(book), data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' } do %>
+                    <span class="material-symbols-outlined">delete</span>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </li>
         <% end %>
-      </tbody>
-    </table>
+      </ul>
+      <div class="controls text-center">
+        <button class="btn btn-outline-primary prev">Prev</button>
+        <button class="btn btn-outline-primary next">Next</button>
+      </div>
+    </div>
   <% end %>
 </div>

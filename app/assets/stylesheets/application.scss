@@ -30,3 +30,32 @@ form {
     color: red;
   }
 }
+
+.custom-carousel {
+  ul {
+    overflow: hidden;
+    position: relative;
+    width: auto;
+
+    -moz-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    box-orient: horizontal;
+
+    display: -moz-box;
+    display: -ms-box;
+    display: -webkit-box;
+    display: -o-box;
+    display: box;
+
+    list-style-type: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+
+    li {
+      margin-right: 10px;
+      max-width: 180px;
+    }
+  }
+}

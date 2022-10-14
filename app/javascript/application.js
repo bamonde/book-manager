@@ -13,4 +13,14 @@ import "controllers"
 
 $(document).ready(function () {
   console.log('System Ready');
+
+  $(".custom-carousel .prev").click(function () {
+    const itemWidth = $('.custom-carousel-item:first').width()
+    $('.custom-carousel ul').animate({ scrollLeft: $('.custom-carousel ul').scrollLeft() - (itemWidth * 1.2) }, 600);
+  });
+
+  $(".custom-carousel .next").click(async function () {
+    const itemWidth = $('.custom-carousel-item:first').width()
+    $('.custom-carousel ul').animate({ scrollLeft: $('.custom-carousel ul').scrollLeft() + (itemWidth * 1.2) }, 600);
+  });
 });
