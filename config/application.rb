@@ -27,5 +27,13 @@ module App
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.to_prepare do
+      Devise::SessionsController.layout "public"
+      Devise::RegistrationsController.layout "public"
+      Devise::ConfirmationsController.layout "public"
+      Devise::UnlocksController.layout "public"
+      Devise::PasswordsController.layout "public"
+    end
   end
 end

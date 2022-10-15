@@ -1,0 +1,10 @@
+pt-BR:
+  devise:
+    registrations:
+      new:
+        sign_up: Cadastro
+        characters minimum: caracteres mínimo
+        button_sign_up: Cadastrar
+    passwords:
+      new:
+        button_send_instructions: "Enviar instruções para restaurar minha senha"

@@ -3,14 +3,20 @@
 
 puts 'Running seeds'
 
-(1..5).each { Publisher.create(name: Faker::Book.publisher) }
-(1..10).each { Author.create(name: Faker::Book.author) }
+User.create!(
+  name: 'Herbertt Bamonde',
+  email: 'hpbamonde@gmail.com',
+  password: '123123123'
+)
+
+(1..5).each { Publisher.create!(name: Faker::Book.publisher) }
+(1..10).each { Author.create!(name: Faker::Book.author) }
 
 publishers = Publisher.all
 authors = Author.all
 
 (1..30).each do
-  book = Book.create(
+  book = Book.create!(
     title: Faker::Book.title,
     genre: Faker::Book.genre,
     edition: (1..4).to_a.sample,

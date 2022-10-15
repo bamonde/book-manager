@@ -1,0 +1,10 @@
+en:
+  devise:
+    registrations:
+      new:
+        sign_up: "Sign Up"
+        characters minimum: "characters minimum"
+        button_sign_up: "Sign Up"
+    passwords:
+      new:
+        button_send_instructions: "Send me reset password instructions"

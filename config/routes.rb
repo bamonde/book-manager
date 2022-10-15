@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'books#index'
 
-  resources :books, param: :id
+  resources :books
+
+  devise_for :users
 end
