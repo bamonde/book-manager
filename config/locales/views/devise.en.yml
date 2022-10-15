@@ -1,5 +1,9 @@
 en:
   devise:
+    sessions:
+      new:
+        sign_in: "Sign In"
+        button_sign_in: "Sign In"
     registrations:
       new:
         sign_up: "Sign Up"
@@ -8,3 +12,9 @@ en:
     passwords:
       new:
         button_send_instructions: "Send me reset password instructions"
+        forgot_password: "I forgot my password"
+    shared:
+      links:
+        sign_in: "Sign In"
+        sign_up: "Sign Up"
+        forgot_password: "I forgot my password"

@@ -10,3 +10,4 @@ pt-BR:
         email: "E-Mail"
         password: "Senha"
         password_confirmation: "Confirmação de senha"
+        remember_me: "Lembrar-me"

@@ -1,10 +1,20 @@
 pt-BR:
   devise:
+    sessions:
+      new:
+        sign_in: "Login"
+        button_sign_in: "Entrar"
     registrations:
       new:
-        sign_up: Cadastro
-        characters minimum: caracteres mínimo
-        button_sign_up: Cadastrar
+        sign_up: "Cadastro"
+        characters minimum: "caracteres mínimo"
+        button_sign_up: "Cadastrar"
     passwords:
       new:
         button_send_instructions: "Enviar instruções para restaurar minha senha"
+        forgot_password: "Esqueci minha senha"
+    shared:
+      links:
+        sign_in: "Já tenho acesso"
+        sign_up: "Quero me cadastrar"
+        forgot_password: "Esqueci minha senha"

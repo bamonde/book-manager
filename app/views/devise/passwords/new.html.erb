@@ -2,7 +2,7 @@
   <div class="col-4 text-center">
     <%= image_tag asset_path('book-logo-crop.jpg'), class: 'logo', alt: t('logo_alt') %>
     <h1 class="fs-4 m-0"><%= t('app_name') %></h1>
-    <h2 class="fs-5 m-4"><%= t('.sign_up') %></h2>
+    <h2 class="fs-5 m-4"><%= t('.forgot_password') %></h2>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
