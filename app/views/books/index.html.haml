@@ -1,0 +1,33 @@
+.books.list
+  .row.my-2
+    .col.text-end
+      = link_to 'Novo Livro', new_book_path, class: 'btn btn-primary'
+  - if @books.empty?
+    .row
+      .col
+        .card
+          .card-body
+            = t('.blank_slate')
+            = link_to t('.new_book'), new_book_path, class: 'btn-btn-primary'
+  - else
+    .custom-carousel
+      %ul
+        - @books.each do |book|
+          %li.custom-carousel-item
+            .card
+              = image_tag book.cover_attachment, class: 'card-img-top'
+              .card-body
+                %h5.card-title.text-truncate{title: "#{book.title}"}= book.title
+                %p.card-text.text-truncate{title: "#{book.genre}"}= book.genre
+                .text-center
+                  = link_to book_path(book), class: 'btn btn-sm btn-light list-show' do
+                    %span.material-symbols-outlined open_in_new
+                  = link_to edit_book_path(book), class: 'btn btn-sm btn-light' do
+                    %span.material-symbols-outlined edit_square
+                  = button_to book_path(book), class: 'btn btn-sm btn-light list-delete', method: :delete, data: { confirm: t('.confirm_delete') } do
+                    %span.material-symbols-outlined delete
+      .text-center
+        = t('book_found', count: @books.size)
+      .controls.text-center
+        %button.btn.btn-outline-primary.prev= t('.prev')
+        %button.btn.btn-outline-primary.next= t('.next')
