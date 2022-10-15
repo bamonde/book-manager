@@ -9,5 +9,8 @@ pt-BR:
       edition: "Edição"
       informations: "Informações"
     index:
-      blank_slate: "Nanhum livro cadastrado!"
+      blank_slate: "Nenhum livro cadastrado!"
       new_book: "Quero cadastrar agora"
+      prev: "Anteriores"
+      next: "Próximos"
+      confirm_delete: "Tem certeza que deseja excluir o livro?"

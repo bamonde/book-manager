@@ -1,4 +1,8 @@
 pt-BR:
+  book_found:
+    zero: "No books found"
+    one: "%{count} book found"
+    other: "%{count} books found"
   activerecord:
     models:
       book:

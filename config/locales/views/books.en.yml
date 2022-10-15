@@ -8,3 +8,9 @@ pt-BR:
       publisher: "Publisher"
       edition: "Edition"
       informations: "Informations"
+    index:
+      blank_slate: "No books found!"
+      new_book: "I want to register a book now"
+      prev: "Previous"
+      next: "Next"
+      confirm_delete: "Are you sure that you want to remove this book?"

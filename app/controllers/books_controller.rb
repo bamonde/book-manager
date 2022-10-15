@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :load_book, only: %i[show edit update destroy]
 
   def index
-    @books = Book.includes(:publisher, :authors).all
+    @books = Book.includes(:publisher, :authors).order(updated_at: :desc).all
   end
 
   def new

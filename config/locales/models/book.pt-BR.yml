@@ -1,4 +1,8 @@
 pt-BR:
+  book_found:
+    zero: "Nenhum livro encontrado"
+    one: "%{count} livro encontrado"
+    other: "%{count} livros encontrados"
   activerecord:
     models:
       book:

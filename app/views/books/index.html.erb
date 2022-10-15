@@ -1,6 +1,6 @@
 <div class="books list">
   <div class="row my-2">
-    <div class="col text-right">
+    <div class="col text-end">
       <%= link_to 'Novo Livro', new_book_path, class: 'btn btn-primary' %>
     </div>
   </div>
@@ -32,7 +32,7 @@
                   <%= link_to edit_book_path(book), class: 'btn btn-sm btn-light' do %>
                     <span class="material-symbols-outlined">edit_square</span>
                   <% end %>
-                  <%= link_to book_path(book), class: 'btn btn-sm btn-light list-delete', data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' } do %>
+                  <%= button_to book_path(book), class: 'btn btn-sm btn-light list-delete', method: :delete, data: { confirm: t('.confirm_delete') } do %>
                     <span class="material-symbols-outlined">delete</span>
                   <% end %>
                 </div>
@@ -41,9 +41,12 @@
           </li>
         <% end %>
       </ul>
+      <div class="text-center">
+        <%= t('book_found', count: @books.size) %></p>
+      </div>
       <div class="controls text-center">
-        <button class="btn btn-outline-primary prev">Prev</button>
-        <button class="btn btn-outline-primary next">Next</button>
+        <button class="btn btn-outline-primary prev"><%= t('.prev') %></button>
+        <button class="btn btn-outline-primary next"><%= t('.next') %></button>
       </div>
     </div>
   <% end %>
