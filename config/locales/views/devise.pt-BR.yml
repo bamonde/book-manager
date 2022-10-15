@@ -11,8 +11,11 @@ pt-BR:
         button_sign_up: "Cadastrar"
     passwords:
       new:
-        button_send_instructions: "Enviar instruções para restaurar minha senha"
         forgot_password: "Esqueci minha senha"
+        button_send_instructions: "Enviar instruções para restaurar minha senha"
+      edit:
+        change_password: "Alterar senha"
+        button_change_password: "Alterar"
     shared:
       links:
         sign_in: "Já tenho acesso"

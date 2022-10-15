@@ -11,8 +11,11 @@ en:
         button_sign_up: "Sign Up"
     passwords:
       new:
-        button_send_instructions: "Send me reset password instructions"
         forgot_password: "I forgot my password"
+        button_send_instructions: "Send me reset password instructions"
+      edit:
+        change_password: "Change your password"
+        button_change_password: "Change"
     shared:
       links:
         sign_in: "Sign In"

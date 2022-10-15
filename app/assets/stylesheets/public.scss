@@ -30,4 +30,18 @@
   h1 {
     color: #9f9f9f;
   }
+
+  #error_explanation {
+    color: red;
+
+    h2 {
+      font-size: 14px;
+    }
+
+    ul {
+      font-size: 14px;
+      list-style: none;
+      padding: 0;
+    }
+  }
 }
