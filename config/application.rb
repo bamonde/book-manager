@@ -30,7 +30,7 @@ module App
 
     config.to_prepare do
       Devise::SessionsController.layout "public"
-      Devise::RegistrationsController.layout "public"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "public" }
       Devise::ConfirmationsController.layout "public"
       Devise::UnlocksController.layout "public"
       Devise::PasswordsController.layout "public"

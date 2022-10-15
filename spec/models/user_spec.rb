@@ -14,6 +14,6 @@ RSpec.describe User, :unit, type: :model do
   context 'validations' do
     subject(:user) { FactoryBot.build(:user) }
 
-    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:name).on(:update) }
   end
 end

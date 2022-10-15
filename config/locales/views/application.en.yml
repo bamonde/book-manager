@@ -1,0 +1,5 @@
+en:
+  application:
+    header:
+      my_data: "My data"
+      sign_out: "Sign out"

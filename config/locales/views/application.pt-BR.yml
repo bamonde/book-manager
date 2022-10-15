@@ -1,0 +1,5 @@
+pt-BR:
+  application:
+    header:
+      my_data: "Meus dados"
+      sign_out: "Sair"

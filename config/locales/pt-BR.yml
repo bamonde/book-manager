@@ -1,6 +1,9 @@
 pt-BR:
   app_name: "Gerenciador de Livros"
   logo_alt: "Logo"
+  buttons:
+    back: "Voltar"
+    edit: "Editar"
   boolean:
     "yes": 'Sim'
     "no": 'Não'

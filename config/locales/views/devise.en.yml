@@ -7,8 +7,18 @@ en:
     registrations:
       new:
         sign_up: "Sign Up"
-        characters minimum: "characters minimum"
+        characters_minimum: "characters minimum"
         button_sign_up: "Sign Up"
+      edit:
+        title: "Edit my data"
+        button_edit_data: "Update my data"
+        leave_in_blank: "(leave blank if you don't want to change it)"
+        need_current_password: "(we need your current password to confirm your changes)"
+        characters_minimum: "characters minimum"
+        cancel_my_account: "Cancel my account"
+        unhappy: "Is not happy with the platform?"
+        want_cancel_my_account: "I want to cancel my account"
+        confirm_account_delete: "Are you sure that you want to remove your account?"
     passwords:
       new:
         forgot_password: "I forgot my password"

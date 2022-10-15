@@ -7,8 +7,18 @@ pt-BR:
     registrations:
       new:
         sign_up: "Cadastro"
-        characters minimum: "caracteres mínimo"
+        characters_minimum: "caracteres mínimo"
         button_sign_up: "Cadastrar"
+      edit:
+        title: "Editar meus dados"
+        button_edit_data: "Atualizar meus dados"
+        leave_in_blank: "(deixe em branco caso não queira alterar a senha)"
+        need_current_password: "(precisamos da senha atual para confirmar as alterações)"
+        characters_minimum: "caracteres mínimo"
+        cancel_my_account: "Cancelar minha conta"
+        unhappy: "Não está feliz com a plataforma?"
+        want_cancel_my_account: "Quero cancelar minha conta"
+        confirm_account_delete: "Tem certeza que deseja excluir sua conta?"
     passwords:
       new:
         forgot_password: "Esqueci minha senha"

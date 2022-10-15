@@ -64,8 +64,8 @@
 
           <div class="mb-3 row">
             <div class="col">
-              <%= link_to 'Editar', edit_book_path(@book), class: 'btn btn-primary' %>
-              <%= link_to 'Voltar', books_path, class: 'btn btn-secondary' %>
+              <%= link_to t('edit', scope: 'buttons'), edit_book_path(@book), class: 'btn btn-primary' %>
+              <%= link_to t('back', scope: 'buttons'), books_path, class: 'btn btn-secondary' %>
             </div>
           </div>
         </div>
