@@ -13,7 +13,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ] # Windows does n
 gem "bootsnap", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "devise" # Authentication and Authorization
 gem "awesome_print"
-gem 'bootstrap', '~> 5.2', '>= 5.2.1'
+gem "bootstrap", "~> 5.2", ">= 5.2.1"
 gem "sassc-rails" # Use Sass to process CSS
 gem "responders" # Optimize flash messages
 
@@ -22,9 +22,9 @@ gem "responders" # Optimize flash messages
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ] # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'rspec-rails'
+  gem "rspec-rails"
   gem "factory_bot_rails"
-  gem 'faker'
+  gem "faker"
 end
 
 group :development do
@@ -40,4 +40,5 @@ group :test do
   gem "shoulda-matchers", "~> 5.0"
   gem "rails-controller-testing"
   gem "rspec-collection_matchers"
+  gem "database_cleaner-active_record"
 end
