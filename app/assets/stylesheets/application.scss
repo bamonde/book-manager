@@ -10,8 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap-datepicker3
  */
 
  @import "bootstrap";
@@ -22,6 +21,16 @@
     height: 50px;
     width: 80px;
     margin-right: 20px;
+  }
+  form {
+    display: inline;
+    position: relative;
+    top: -1px;
+  }
+
+  a.my-data,
+  button.sign-out {
+    font-size: 12px;
   }
 }
 

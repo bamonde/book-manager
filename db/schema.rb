@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_220555) do
 
   create_table "books", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
-    t.datetime "release_date"
+    t.date "release_date"
     t.integer "edition"
     t.string "genre"
     t.string "isbn"

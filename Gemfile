@@ -17,6 +17,7 @@ gem "bootstrap", "~> 5.2", ">= 5.2.1"
 gem "sassc-rails" # Use Sass to process CSS
 gem "responders" # Optimize flash messages
 gem 'haml' # HTML Abstraction Markup Language
+gem 'bootstrap-datepicker-rails' # bootstrap-datepicker-rails project integrates a datepicker
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

@@ -22,4 +22,12 @@ docker-compose up web
 docker-compose run --rm web bundle exec rspec
 ```
 
+## Icons
+
+Icons used into plataform extracted from Google Fonts as linked below.
+
+https://fonts.google.com/icons
+
+Font: Materials Symbols
+
 *Oct, 2022 - Herbertt Bamonde*

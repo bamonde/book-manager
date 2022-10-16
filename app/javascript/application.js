@@ -11,16 +11,26 @@ window.bootstrap = bootstrap
 import Rails from '@rails/ujs';
 Rails.start();
 
-$(document).ready(function () {
-  console.log('System Ready');
+import 'bootstrap-datepicker'
 
-  $(".custom-carousel .prev").click(function () {
-    const itemWidth = $('.custom-carousel-item:first').width()
-    $('.custom-carousel ul').animate({ scrollLeft: $('.custom-carousel ul').scrollLeft() - (itemWidth * 1.2) }, 600);
-  });
+(function ($) {
+  $(document).ready(function () {
+    console.log('System Ready');
 
-  $(".custom-carousel .next").click(async function () {
-    const itemWidth = $('.custom-carousel-item:first').width()
-    $('.custom-carousel ul').animate({ scrollLeft: $('.custom-carousel ul').scrollLeft() + (itemWidth * 1.2) }, 600);
+    $(".input-group.date").datepicker({
+      todayHighlight: true,
+      format: 'dd/mm/yyyy',
+      language: 'pt-BR',
+    });
+
+    $(".custom-carousel .prev").click(function () {
+      const itemWidth = $('.custom-carousel-item:first').width()
+      $('.custom-carousel ul').animate({ scrollLeft: $('.custom-carousel ul').scrollLeft() - (itemWidth * 1.2) }, 600);
+    });
+
+    $(".custom-carousel .next").click(async function () {
+      const itemWidth = $('.custom-carousel-item:first').width()
+      $('.custom-carousel ul').animate({ scrollLeft: $('.custom-carousel ul').scrollLeft() + (itemWidth * 1.2) }, 600);
+    });
   });
-});
+})(jQuery);

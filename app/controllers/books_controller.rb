@@ -52,7 +52,7 @@ class BooksController < ApplicationController
   def load_book
     @book = Book.find(params[:id])
   rescue
-    flash[:error] = t('not_found', scope: 'flash')
+    flash[:error] = t('.not_found', scope: 'flash')
     redirect_to books_path
   end
 end

@@ -2,7 +2,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
   def change
     create_table :books, id: :uuid do |t|
       t.string :title
-      t.datetime :release_date
+      t.date :release_date
       t.integer :edition
       t.string :genre
       t.string :isbn
