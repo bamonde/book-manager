@@ -12,9 +12,10 @@ ENV BUNDLE_PATH=/bundle \
 
 WORKDIR /web
 
-COPY Gemfile Gemfile.lock ./web
+COPY Gemfile Gemfile.lock /web
+
 RUN bundle install
 
-ADD . ./web
+COPY . /web
 
 CMD ["bash"]
