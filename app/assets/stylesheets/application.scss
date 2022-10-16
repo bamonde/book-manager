@@ -88,6 +88,10 @@ form {
     li {
       margin-right: 10px;
       max-width: 180px;
+
+      .card-img-top {
+        height: 270px;
+      }
     }
   }
 }
