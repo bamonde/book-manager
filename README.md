@@ -24,7 +24,9 @@ docker-compose up web
 
 ### 3. Access
 
-Use this credential to access the platform
+Access on your browser **localhost:3000**
+
+Use the credential below to access the platform
 
 * Email: *hpbamonde@gmail.com*
 * Password: *123123123*
