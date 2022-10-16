@@ -115,7 +115,7 @@ RSpec.describe BooksController, :unit, type: :controller do
         context 'making a request' do
           before { make_a_request }
 
-          it { expect(subject.request.flash[:success]).to eq(I18n.t('actions.create.success', scope: 'flash', resource_name: 'Livro')) }
+          it { expect(subject.request.flash[:notice]).to eq(I18n.t('actions.create.notice', scope: 'flash', resource_name: 'Livro')) }
         end
 
         it { expect { make_a_request }.to change(Book, :count).by(1) }
@@ -141,7 +141,7 @@ RSpec.describe BooksController, :unit, type: :controller do
         context 'making a request' do
           before { make_a_request }
 
-          it { expect(subject.request.flash[:error]).to eq(I18n.t('actions.create.error', scope: 'flash')) }
+          it { expect(subject.request.flash[:alert]).to eq(I18n.t('actions.create.alert', scope: 'flash')) }
         end
 
         it { expect { make_a_request }.not_to change(Book, :count) }
@@ -178,7 +178,7 @@ RSpec.describe BooksController, :unit, type: :controller do
         it do
           make_a_request
 
-          expect(controller).to set_flash[:error].to(I18n.t('flash.books.not_found'))
+          expect(controller).to set_flash[:alert].to(I18n.t('flash.books.not_found'))
         end
         it { is_expected.to have_http_status(:redirect) }
         it { is_expected.to redirect_to(books_path) }
@@ -211,7 +211,7 @@ RSpec.describe BooksController, :unit, type: :controller do
         context 'making a request' do
           before { make_a_request }
 
-          it { expect(subject.request.flash[:success]).to eq(I18n.t('actions.update.success', scope: 'flash', resource_name: 'Livro')) }
+          it { expect(subject.request.flash[:notice]).to eq(I18n.t('actions.update.notice', scope: 'flash', resource_name: 'Livro')) }
         end
         it { expect { make_a_request }.not_to change(Book, :count) }
         it { is_expected.to have_http_status(:redirect) }
@@ -226,7 +226,7 @@ RSpec.describe BooksController, :unit, type: :controller do
           it do
             make_a_request
 
-            expect(controller).to set_flash[:error].to(I18n.t('flash.books.not_found'))
+            expect(controller).to set_flash[:alert].to(I18n.t('flash.books.not_found'))
           end
           it { is_expected.to have_http_status(:redirect) }
           it { is_expected.to redirect_to(books_path) }
@@ -251,7 +251,7 @@ RSpec.describe BooksController, :unit, type: :controller do
           context 'making a request' do
             before { make_a_request }
 
-            it { expect(subject.request.flash[:error]).to eq(I18n.t('actions.update.error', scope: 'flash')) }
+            it { expect(subject.request.flash[:alert]).to eq(I18n.t('actions.update.alert', scope: 'flash')) }
           end
 
           it { expect { make_a_request }.not_to change(Book, :count) }
@@ -284,7 +284,7 @@ RSpec.describe BooksController, :unit, type: :controller do
         it do
           make_a_request
 
-          expect(controller).to set_flash[:error].to(I18n.t('flash.books.not_found'))
+          expect(controller).to set_flash[:alert].to(I18n.t('flash.books.not_found'))
         end
         it { is_expected.to have_http_status(:redirect) }
         it { is_expected.to redirect_to(books_path) }
@@ -304,7 +304,7 @@ RSpec.describe BooksController, :unit, type: :controller do
         context 'making a request' do
           before { make_a_request }
 
-          it { expect(controller).to set_flash[:success].to(I18n.t('flash.books.destroy.success')) }
+          it { expect(controller).to set_flash[:notice].to(I18n.t('flash.books.destroy.notice')) }
         end
       end
 
@@ -318,7 +318,7 @@ RSpec.describe BooksController, :unit, type: :controller do
         context 'make a request' do
           before { make_a_request }
 
-          it { expect(controller).to set_flash[:error].to(I18n.t('flash.books.not_found')) }
+          it { expect(controller).to set_flash[:alert].to(I18n.t('flash.books.not_found')) }
         end
       end
     end

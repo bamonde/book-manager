@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
 
-    flash[:success] = t('.success', scope: 'flash')
+    flash[:notice] = t('.notice', scope: 'flash')
 
     redirect_to books_path
   end
@@ -52,7 +52,7 @@ class BooksController < ApplicationController
   def load_book
     @book = Book.find(params[:id])
   rescue
-    flash[:error] = t('.not_found', scope: 'flash')
+    flash[:alert] = t('.not_found', scope: 'flash')
     redirect_to books_path
   end
 end

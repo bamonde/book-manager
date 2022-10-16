@@ -10,7 +10,7 @@ module App
   class Application < Rails::Application
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
-    config.responders.flash_keys = [ :success, :error ]
+    # config.responders.flash_keys = [ :notice, :alert ]
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
