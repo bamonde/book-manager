@@ -11,6 +11,7 @@ e assim que logado a pagina que devo ser encaminhado é uma pagina de listagem d
 ## Instructions to access the platform
 
 Follow the instructions above to have access the plataform.
+
 ### 1. Install
 ```
 docker-compose build
