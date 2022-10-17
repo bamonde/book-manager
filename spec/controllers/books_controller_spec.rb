@@ -155,7 +155,7 @@ RSpec.describe BooksController, :unit, type: :controller do
       let!(:publishers) { FactoryBot.create_list(:publisher, 3) }
 
       context 'a found book' do
-        let!(:book) { FactoryBot.create(:book, publisher: publishers.sample, authors: [authors.sample]) }
+        let!(:book) { FactoryBot.create(:book, publisher_id: publishers.sample.id, author_ids: [authors.sample.id]) }
 
         subject(:make_a_request) { get :edit, params: { id: book.id } }
 
@@ -188,7 +188,7 @@ RSpec.describe BooksController, :unit, type: :controller do
     context '#update' do
       let!(:authors) { FactoryBot.create_list(:author, 2) }
       let!(:publishers) { FactoryBot.create_list(:publisher, 2) }
-      let!(:book) { FactoryBot.create(:book, publisher: publishers.first, authors: [authors.first]) }
+      let!(:book) { FactoryBot.create(:book, publisher_id: publishers.first.id, author_ids: [authors.first.id]) }
 
       subject(:make_a_request) { put :update, params: { id: book_id, book: book_params } }
 

@@ -8,6 +8,7 @@ FactoryBot.define do
     iccn { Faker::Number.number(digits: 4) }
     oclc { Faker::Number.number(digits: 8) }
     publisher { FactoryBot.create(:publisher) }
+    author_ids { FactoryBot.create_list(:author, 2).map(&:id) }
 
     after(:build) do |book|
       book.cover.attach(
