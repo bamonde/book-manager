@@ -4,8 +4,8 @@
 puts 'Running seeds'
 
 User.create!(
-  name: 'Herbertt Bamonde',
-  email: 'hpbamonde@gmail.com',
+  name: 'Tony Stark',
+  email: 'tony.stark@avengers.com',
   password: '123123123'
 )
 

@@ -29,7 +29,7 @@ Access on your browser **localhost:3000**
 
 Use the credential below to access the platform
 
-* Email: *hpbamonde@gmail.com*
+* Email: *tony.stark@avengers.com*
 * Password: *123123123*
 
 - - - -
