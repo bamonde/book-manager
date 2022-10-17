@@ -10,7 +10,7 @@ class Book < ApplicationRecord
   validates :genre, presence: true
   validates :release_date, presence: true
   validates :edition, presence: true
-  validates :publisher, presence: true
+  validates :publisher_id, presence: true
 
   def authors_name
     authors.map(&:name)

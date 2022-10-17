@@ -18,7 +18,7 @@ RSpec.describe Book, :unit, type: :model do
     it { is_expected.to validate_presence_of(:genre) }
     it { is_expected.to validate_presence_of(:release_date) }
     it { is_expected.to validate_presence_of(:edition) }
-    it { is_expected.to validate_presence_of(:publisher) }
+    it { is_expected.to validate_presence_of(:publisher_id) }
   end
 
   context 'associations' do
